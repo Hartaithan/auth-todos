@@ -11,6 +11,7 @@ import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { HeaderComponent } from './components/header/header.component';
 import { ViewSwitchComponent } from './components/view-switch/view-switch.component';
 
 @NgModule({
@@ -19,6 +20,7 @@ import { ViewSwitchComponent } from './components/view-switch/view-switch.compon
     MainComponent,
     SignInComponent,
     SignUpComponent,
+    HeaderComponent,
     ViewSwitchComponent,
   ],
   imports: [
