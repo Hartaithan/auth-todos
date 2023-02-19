@@ -1,0 +1,39 @@
+.view-switch {
+  height: 35px;
+  width: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  background: #141414;
+  cursor: pointer;
+}
+
+.active {
+  height: 35px;
+  width: 40px;
+  position: absolute;
+  border-radius: 8px;
+  background: #2e2e2e;
+  z-index: 0;
+  transition: all 0.2s ease-in-out;
+  &.left {
+    transform: translateX(0%);
+  }
+  &.right {
+    transform: translateX(100%);
+  }
+}
+
+.icon {
+  height: 35px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+svg {
+  z-index: 1;
+}

@@ -11,9 +11,16 @@ import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { ViewSwitchComponent } from './components/view-switch/view-switch.component';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, SignInComponent, SignUpComponent],
+  declarations: [
+    AppComponent,
+    MainComponent,
+    SignInComponent,
+    SignUpComponent,
+    ViewSwitchComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
