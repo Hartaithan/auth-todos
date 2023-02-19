@@ -1,5 +1,8 @@
 <button class="view-switch" (click)="toggleView()">
-  <div class="active" [ngClass]="value === 'list' ? 'left' : 'right'"></div>
+  <div
+    class="active"
+    [ngClass]="value === viewEnum.List ? 'left' : 'right'"
+  ></div>
   <div class="icon">
     <svg
       width="19px"

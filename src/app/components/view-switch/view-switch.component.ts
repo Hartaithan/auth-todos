@@ -8,6 +8,8 @@ import { VIEW } from 'src/app/models/view.model';
   styleUrls: ['./view-switch.component.scss'],
 })
 export class ViewSwitchComponent {
+  readonly viewEnum = VIEW;
+
   value: VIEW = VIEW.List;
 
   constructor(private router: Router, private route: ActivatedRoute) {}
