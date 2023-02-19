@@ -1,2 +1,5 @@
-<p class="welcome">Hello, u have #TODOS_COUNT tasks 🙂</p>
-<app-view-switch />
+<p *ngIf="isLoading; else countIsReady">Wait, i'm fetching todos... 🤔</p>
+<ng-template #countIsReady>
+  <p else class="welcome">Hello, u have {{ count }} tasks 🙂</p>
+</ng-template>
+<app-view-switch></app-view-switch>
