@@ -1,8 +1,15 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss'],
 })
-export class SignInComponent {}
+export class SignInComponent {
+  constructor(private auth: AuthService) {}
+
+  signIn() {
+    this.auth.googleSignIn();
+  }
+}
