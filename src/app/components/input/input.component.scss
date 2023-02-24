@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  margin-bottom: 12px;
+}
+
+:host(:last-of-type) {
+  margin-bottom: 0px;
+}
+
+label {
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+input {
+  font-size: 14px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: #121212;
+  color: #ffffff;
+}

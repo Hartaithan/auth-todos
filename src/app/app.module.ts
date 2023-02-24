@@ -14,6 +14,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { ViewSwitchComponent } from './components/view-switch/view-switch.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { InputComponent } from './components/input/input.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,8 +26,10 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
     ViewSwitchComponent,
     AuthLayoutComponent,
     MainLayoutComponent,
+    InputComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
