@@ -1,5 +1,12 @@
-<p *ngIf="isLoading; else countIsReady">Wait, i'm fetching todos... 🤔</p>
-<ng-template #countIsReady>
-  <p else class="welcome">Hello, u have {{ count }} tasks 🙂</p>
-</ng-template>
+<div class="wrapper">
+  <p *ngIf="isLoading; else countIsReady">Wait, i'm fetching todos... 🤔</p>
+  <ng-template #countIsReady>
+    <p else class="welcome">Hello, u have {{ count }} tasks 🙂</p>
+  </ng-template>
+</div>
+<app-button
+  *ngIf="auth.isAuth"
+  text="Sign out"
+  (handleClick)="signOut()"
+></app-button>
 <app-view-switch></app-view-switch>

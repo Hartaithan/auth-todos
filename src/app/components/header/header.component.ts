@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { TodoService } from 'src/app/services/todo/todo.service';
 
 @Component({
@@ -12,10 +13,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   count: number | null = null;
   todos: Subscription | null = null;
 
-  constructor(private service: TodoService) {}
+  constructor(private todo: TodoService, public auth: AuthService) {}
 
   ngOnInit() {
-    this.todos = this.service.getTodos().subscribe((todos) => {
+    this.todos = this.todo.getTodos().subscribe((todos) => {
       this.isLoading = false;
       this.count = todos.length;
     });
@@ -25,5 +26,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     if (this.todos) {
       this.todos.unsubscribe();
     }
+  }
+
+  signOut() {
+    this.auth.signOut();
   }
 }

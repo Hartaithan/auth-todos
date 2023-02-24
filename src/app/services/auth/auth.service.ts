@@ -7,6 +7,7 @@ import {
   user,
 } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { signOut } from '@firebase/auth';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -14,8 +15,13 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   user: Observable<User | null>;
+  isAuth = false;
+
   constructor(private auth: Auth, private router: Router) {
     this.user = user(this.auth);
+    auth.onAuthStateChanged((user) => {
+      this.isAuth = !!user;
+    });
   }
 
   async googleSignIn(): Promise<void> {
@@ -26,6 +32,16 @@ export class AuthService {
       })
       .catch((error) => {
         console.error('sign in error:', error);
+      });
+  }
+
+  async signOut(): Promise<void> {
+    signOut(this.auth)
+      .then(() => {
+        this.router.navigate(['/sign-in']);
+      })
+      .catch((error) => {
+        console.error('sign out error:', error);
       });
   }
 }

@@ -1,7 +1,14 @@
 :host {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   height: 50px;
   border-bottom: 1px solid #2d2d2d;
+  & > app-button,
+  & > :last-child {
+    margin-left: 12px;
+  }
+}
+
+.wrapper {
+  margin-right: auto;
 }
