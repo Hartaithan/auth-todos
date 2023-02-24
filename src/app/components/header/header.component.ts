@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { TodoService } from 'src/app/services/todo/todo.service';
 
 @Component({
@@ -9,13 +10,20 @@ import { TodoService } from 'src/app/services/todo/todo.service';
 export class HeaderComponent {
   isLoading: boolean = true;
   count: number | null = null;
+  todos: Subscription | null = null;
 
   constructor(private service: TodoService) {}
 
   ngOnInit() {
-    this.service.getTodos().subscribe((todos) => {
+    this.todos = this.service.getTodos().subscribe((todos) => {
       this.isLoading = false;
       this.count = todos.length;
     });
+  }
+
+  ngOnDestroy() {
+    if (this.todos) {
+      this.todos.unsubscribe();
+    }
   }
 }
