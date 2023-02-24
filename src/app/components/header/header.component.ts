@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { TodoService } from 'src/app/services/todo/todo.service';
 
@@ -7,8 +7,8 @@ import { TodoService } from 'src/app/services/todo/todo.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
-  isLoading: boolean = true;
+export class HeaderComponent implements OnInit, OnDestroy {
+  isLoading = true;
   count: number | null = null;
   todos: Subscription | null = null;
 

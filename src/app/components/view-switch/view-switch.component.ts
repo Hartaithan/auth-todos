@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VIEW } from 'src/app/models/view.model';
 
@@ -7,7 +7,7 @@ import { VIEW } from 'src/app/models/view.model';
   templateUrl: './view-switch.component.html',
   styleUrls: ['./view-switch.component.scss'],
 })
-export class ViewSwitchComponent {
+export class ViewSwitchComponent implements OnInit {
   readonly viewEnum = VIEW;
 
   value: VIEW = VIEW.List;
