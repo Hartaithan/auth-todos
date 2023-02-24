@@ -1,0 +1,16 @@
+button {
+  height: 30px;
+  width: 200px;
+  background: #121212;
+  color: #ffffff;
+  font-size: 12px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  &:disabled {
+    background: #12121280;
+    color: #808080;
+    cursor: none;
+  }
+}
