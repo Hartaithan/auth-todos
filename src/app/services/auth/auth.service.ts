@@ -15,12 +15,14 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   user: Observable<User | null>;
+  uid: string | null = null;
   isAuth = false;
 
   constructor(private auth: Auth, private router: Router) {
     this.user = user(this.auth);
     auth.onAuthStateChanged((user) => {
       this.isAuth = !!user;
+      this.uid = user ? user.uid : null;
     });
   }
 
