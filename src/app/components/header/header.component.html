@@ -1,7 +1,12 @@
 <div class="wrapper">
   <p *ngIf="isLoading; else countIsReady">Wait, i'm fetching todos... 🤔</p>
   <ng-template #countIsReady>
-    <p else class="welcome">Hello, u have {{ count }} tasks 🙂</p>
+    <p *ngIf="user; else userNotFound">
+      Hello, {{ user.displayName }}, u have {{ count }} tasks 🙂
+    </p>
+    <ng-template #userNotFound>
+      <p else class="welcome">Hello, u have {{ count }} tasks 🙂</p>
+    </ng-template>
   </ng-template>
 </div>
 <app-button
