@@ -31,6 +31,8 @@ export class MainComponent implements OnInit, OnDestroy {
   }
 
   handleSubmit() {
-    alert(this.input);
+    if (this.input.trim().length > 0) {
+      this.todo.addTodo(this.input);
+    }
   }
 }
