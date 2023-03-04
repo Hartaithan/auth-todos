@@ -1,0 +1,17 @@
+<input
+  id="input"
+  type="text"
+  placeholder="What do you need to do?"
+  [(ngModel)]="inputModel"
+  (ngModelChange)="inputModelChange.emit(inputModel)"
+/>
+<button (click)="handleButtonClick.emit($event)">
+  <svg
+    width="30px"
+    height="30px"
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M16,464,496,256,16,48V208l320,48L16,304Z" fill="#a3a3a3" />
+  </svg>
+</button>

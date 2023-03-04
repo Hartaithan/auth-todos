@@ -17,6 +17,7 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
 import { InputComponent } from './components/input/input.component';
 import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from './components/button/button.component';
+import { TodoInputComponent } from './components/todo-input/todo-input.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ButtonComponent } from './components/button/button.component';
     MainLayoutComponent,
     InputComponent,
     ButtonComponent,
+    TodoInputComponent,
   ],
   imports: [
     FormsModule,

@@ -1,2 +1,7 @@
+<app-todo-input
+  [(inputModel)]="input"
+  (handleButtonClick)="handleSubmit()"
+></app-todo-input>
+<p>Value: {{ input }}</p>
 <p>main works!</p>
 <p *ngFor="let todo of todos">{{ todo | json }}</p>

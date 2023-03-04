@@ -17,3 +17,15 @@ body {
 body {
   background: #070707;
 }
+
+app-auth-layout,
+app-main-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+app-main {
+  flex: 1;
+}

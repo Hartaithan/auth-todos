@@ -13,6 +13,7 @@ export class MainComponent implements OnInit, OnDestroy {
   isLoading = true;
   todos: ITodo[] = [];
   todosSub: Subscription | null = null;
+  input = '';
 
   constructor(private todo: TodoService, public auth: AuthService) {}
 
@@ -27,5 +28,9 @@ export class MainComponent implements OnInit, OnDestroy {
     if (this.todosSub) {
       this.todosSub.unsubscribe();
     }
+  }
+
+  handleSubmit() {
+    alert(this.input);
   }
 }
