@@ -24,6 +24,6 @@ export class TodoItemComponent implements OnInit {
   }
 
   deleteTodo() {
-    console.log('item', this.item);
+    this.todo.deleteTodo(this.item.id);
   }
 }
