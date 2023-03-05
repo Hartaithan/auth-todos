@@ -18,6 +18,7 @@ import { InputComponent } from './components/input/input.component';
 import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from './components/button/button.component';
 import { TodoInputComponent } from './components/todo-input/todo-input.component';
+import { TodoItemComponent } from './components/todo-item/todo-item.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { TodoInputComponent } from './components/todo-input/todo-input.component
     InputComponent,
     ButtonComponent,
     TodoInputComponent,
+    TodoItemComponent,
   ],
   imports: [
     FormsModule,

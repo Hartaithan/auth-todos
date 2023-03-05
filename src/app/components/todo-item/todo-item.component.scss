@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  min-height: 40px;
+  width: 100%;
+  background: #141414;
+  border-radius: 8px;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.checkbox {
+  align-self: flex-start;
+  margin-left: 15px;
+  transform: scale(1.5) translateY(4px);
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+}
+
+.title {
+  margin-left: 15px;
+  font-size: 18px;
+  flex: 1;
+  &.completed {
+    text-decoration: line-through;
+  }
+}
+
+.delete {
+  margin-right: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
