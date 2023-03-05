@@ -16,6 +16,8 @@ import { Observable } from 'rxjs';
 import { ITodo } from 'src/app/models/todo.model';
 import { AuthService } from '../auth/auth.service';
 
+const idField = { idField: 'id' };
+
 @Injectable({
   providedIn: 'root',
 })
@@ -29,7 +31,7 @@ export class TodoService {
   getTodos() {
     const uid = this.auth.uid;
     const todosQuery = query(this.todosCollection, where('user_id', '==', uid));
-    return collectionData(todosQuery) as Observable<ITodo[]>;
+    return collectionData(todosQuery, idField) as Observable<ITodo[]>;
   }
 
   addTodo(value: string) {
@@ -44,7 +46,7 @@ export class TodoService {
 
   completeTodo(id: string, completed: boolean) {
     const ref = doc(this.firestore, `todos/${id}`);
-    return updateDoc(ref, { completed: !completed });
+    return updateDoc(ref, { completed });
   }
 
   deleteTodo(id: string) {
